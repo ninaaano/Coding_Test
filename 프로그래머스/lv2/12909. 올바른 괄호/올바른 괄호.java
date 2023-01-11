@@ -10,19 +10,17 @@ class Solution {
         
         int N = sc.length;
         
-        
+        // 첫번째가 ) 면 다음이 ( 이므로 닫을 수 없다
         if(sc[0] == ')'){
             return false;
         }
         
+        // 홀수는 나눌 수 없다
         if(N%2 == 1){
             return false;
         }
         
-        
-        
         for (int i = 0; i < N; i++) {
-            
             if (sc[i] == '(') {
                 stack.push(sc[i]);
             }
