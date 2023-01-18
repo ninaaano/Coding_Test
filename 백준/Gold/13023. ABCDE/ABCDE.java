@@ -1,6 +1,6 @@
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -27,7 +27,7 @@ public class Main {
         }
         boolean[] visited = new boolean[n]; // 방문 배열 선언
         for(int i=0; i<n; i++){
-            Arrays.fill(visited,false); // 근데 방문배열은 어차피 false로 초기화되어있는 것 아닌가?
+            //Arrays.fill(visited,false); // 근데 방문배열은 어차피 false로 초기화되어있는 것 아닌가?
             dfs(i,arrList,visited,1); // 1을 넣는 이유는 뭘까?
             if(isLine) { // dfs 돌고와서 false면 break?
                 break;
@@ -47,9 +47,9 @@ public class Main {
         visited[start] = true; // 방문했으니 체크함
         for(int i : arrList.get(start)){
             if(!visited[i]){ // 방문하지 않았다면
-                dfs(i,arrList,visited,cnt+1); // 재귀로 다시 돌아감
+                dfs(i,arrList,visited,cnt+1); // cnt를 증가 시켜서 재귀로 다시 돌아감
             }
-            if(isLine){ // 존재하지 않으면 종료?
+            if(isLine){ // true가 되면 if문 종료
                 return;
             }
         }
