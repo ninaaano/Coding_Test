@@ -25,7 +25,7 @@ public class Main {
         for(int i = 0; i<n; i++){
             arr[i] = Integer.parseInt(st.nextToken());
             max += arr[i];
-            min = Math.max(min, arr[i]);
+            min = Math.max(min, arr[i]); // 굳이 이걸 써야하는 이유? 안쓰면 틀림
         }
         System.out.println(BinarySearch(arr));
     }
@@ -40,11 +40,11 @@ public class Main {
             int count = 1;
 
             for(int i = 0; i<n; i++){
-                if(sum+arr[i] <= mid){
-                    sum+=arr[i];
-                }else{
-                    sum = arr[i];
+                if(sum+arr[i] > mid){
                     count++;
+                    sum =arr[i];
+                }else{
+                    sum+=arr[i];
                 }
             }
 
