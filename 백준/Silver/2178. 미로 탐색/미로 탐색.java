@@ -9,15 +9,15 @@ public class Main {
     static int[][] arr;
     static boolean[][] visited;
     static int n,m;
-    static int[] dx = {-1,1,0,0}; // x방항배열 - 상하
-    static int[] dy = {0,0,-1,1}; // y방향배열 - 좌우
+    static int[] dx = {-1,1,0,0};
+    static int[] dy = {0,0,-1,1};
     static Queue<int[]> queue;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken()); // 시작
-        m = Integer.parseInt(st.nextToken()); // 끝
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         arr = new int[n][m];
 
@@ -32,6 +32,7 @@ public class Main {
         visited[0][0] = true;
         bfs(0,0);
         System.out.println(arr[n-1][m-1]);
+
     }
 
     private static void bfs(int x, int y) {
@@ -54,11 +55,11 @@ public class Main {
                 if(visited[nextX][nextY] || arr[nextX][nextY] == 0) {
                     continue;
                 }
+
                 queue.add(new int[] {nextX,nextY});
                 arr[nextX][nextY] = arr[nowX][nowY] + 1;
                 visited[nextX][nextY] = true;
             }
         }
-
     }
 }
