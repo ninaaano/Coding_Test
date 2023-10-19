@@ -1,15 +1,12 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 class Solution {
     public String[] solution(String[] names) {
-        List<String> result = new ArrayList<>();
-        
-        for (int i = 0; i < names.length; i += 5) {
-            String[] group = new String[Math.min(5, names.length - i)];
-            System.arraycopy(names, i, group, 0, group.length);
-            result.add(group[0]);
+        List<String> answer = new ArrayList<>();
+        for(int i = 0; i < names.length; i += 5) {
+            answer.add(names[i]);
         }
-        
-        return result.toArray(new String[result.size()]);
+        return answer.toArray(new String[0]);
     }
 }
